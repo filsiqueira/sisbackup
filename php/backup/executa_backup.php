@@ -240,5 +240,5 @@ if($comp_desliga_computador == "SIM" AND $plataforma == "WINDOWS"){
 }
 /***************************************************** Enviando Email *******************************************************/
 
-enviar_email_log_backup($comp_nome_usuario,$setor_nome,$assunto,$data,$msg,$backup_status);
+enviar_email_log_backup($comp_nome_usuario,$setor_nome,$assunto,$data,$msg,$backup_origem);
 ?>
