@@ -1,0 +1,9 @@
+
+ 
+Rotina de Backup iniciada às - 14:00:04 
+ 
+
+sending incremental file list
+
+sent 516 bytes  received 27 bytes  1,086.00 bytes/sec
+total size is 1,495  speedup is 2.75

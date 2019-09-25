@@ -1,0 +1,45 @@
+
+ 
+Rotina de Backup iniciada às - 14:00:06 
+ 
+
+sending incremental file list
+
+sent 16,690 bytes  received 45 bytes  11,156.67 bytes/sec
+total size is 3,174  speedup is 0.19
+
+ 
+Rotina de Backup iniciada às - 14:00:08 
+ 
+
+sending incremental file list
+
+sent 20 bytes  received 12 bytes  64.00 bytes/sec
+total size is 0  speedup is 0.00
+
+ 
+Rotina de Backup iniciada às - 14:00:29 
+ 
+
+sending incremental file list
+
+sent 20 bytes  received 12 bytes  64.00 bytes/sec
+total size is 0  speedup is 0.00
+
+ 
+Rotina de Backup iniciada às - 14:00:50 
+ 
+
+sending incremental file list
+
+sent 20 bytes  received 12 bytes  64.00 bytes/sec
+total size is 0  speedup is 0.00
+
+ 
+Rotina de Backup iniciada às - 14:01:11 
+ 
+
+sending incremental file list
+
+sent 20 bytes  received 12 bytes  64.00 bytes/sec
+total size is 0  speedup is 0.00
