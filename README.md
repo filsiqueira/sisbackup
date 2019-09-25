@@ -2,6 +2,11 @@
 
 Ubuntu 16.04
 
+# Instalação via script
+Você pode realizar a instalação através do script 'instala_sisbackup.sh'. Baixe o script e execute como root.
+
+# Instalaço manual
+
 # Atualizando Servidor e Instalando Dependências
 
 sudo apt update -y && apt upgrade -y && apt dist-upgrade && sudo apt install rsync sshpass unzip wakeonlan wget lamp-server^ phpmyadmin
