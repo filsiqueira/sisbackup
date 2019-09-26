@@ -98,7 +98,7 @@ sleep 3
 #Ajustando script de backup no crontab
 echo "Ajustando script de backup no crontab"
 
-echo "0 * * * * sh /var/www/html/sisbackup/php/backup/executa_backup.sh" >> /etc/crontab
+echo "0 * * * * sh /var/www/html/sisbackup/php/backup/executa_backup.sh" >> /var/spool/cron/crontabs/root
 
 echo "------------------------------------------------------------\n"
 echo "Arquivos ajustados com sucesso"
