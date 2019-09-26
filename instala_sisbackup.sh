@@ -1,7 +1,14 @@
 #!/bin/bash
 #Script de instalacao do sistema Sisbackup
 #Autor: Filipe Siqueira
+#Verificando se esta sendo executado como root
+echo "Verificando as permissoes do usuario ..."
+if [ "$(id -u)" != "0" ]; then
+echo
 
+echo "Voce deve executar este script como root! "
+
+else
 # Testando a comunicacao
 clear
 echo "Testando a conexao com a Internet ..."
@@ -152,4 +159,5 @@ echo "Para acessar seu sistema, abra o navegador e digite: IPSERVIDOR/sisbackup\
 echo ""
 echo "Obrigado por instalar nosso Sistema!"
 
+fi
 fi
