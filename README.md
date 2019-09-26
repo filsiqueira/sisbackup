@@ -4,7 +4,7 @@ Ubuntu 16.04
 
 # Instalação via script
 Você pode realizar a instalação através do script 'instala_sisbackup.sh'. Baixe o script e execute como root.<br>
-wget https://github.com/filsiqueira/sisbackup/blob/master/instala_sisbackup.sh
+
 
 # Instalaço manual
 
