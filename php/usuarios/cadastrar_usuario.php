@@ -34,7 +34,7 @@ if ($count != 0 ){
 } else {
 
 // Inserindo usuario no banco de dados
-$insert = mysqli_query($conexao,"INSERT INTO usuarios (usuario_nome,usuario_login,usuario_senha,usuario_status,usuario_id_setor,usuario_email,usuario_tentativas_invalidas,usuario_data_bloqueio) VALUES ( UCASE('$nome_usuario'),'$login','$senha','$status','$setor','$usuario_email','0','0000-00-00 00:00:00')");
+$insert = mysqli_query($conexao,"INSERT INTO usuarios (usuario_nome,usuario_login,usuario_senha,usuario_status,usuario_id_setor,usuario_email,usuario_tentativas_invalidas,usuario_data_bloqueio) VALUES ( UCASE('$nome_usuario'),'$login','$senha','$status','$setor','$usuario_email','0','1900-01-01 00:00:00')");
 
 	if($insert){
 
