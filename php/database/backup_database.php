@@ -16,7 +16,7 @@ $registro_backup = "sisbackup-".$data."-".$hora.".sql";
 
 $grava_backup = mysqli_query($conexao,"INSERT INTO registro_backup (registro_backup_id,registro_backup) VALUES (DEFAULT,'$registro_backup')");
 
-$backup = shell_exec("mysqldump -u root -p05ad00sp sisbackup > /var/www/html/sisbackup/php/database/backups/sisbackup-$data-$hora.sql");
+$backup = shell_exec("mysqldump -u root -pColoqueSuaSenhaAqui sisbackup > /var/www/html/sisbackup/php/database/backups/sisbackup-$data-$hora.sql");
 
 $arquivo = "../database/backups/sisbackup-$data-$hora.sql";
 
