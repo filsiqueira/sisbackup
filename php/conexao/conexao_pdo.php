@@ -1,7 +1,7 @@
 <?php
 function conectar(){
 	try {
-		$conexao = new PDO("mysql:host=localhost;dbname=sisbackup","root","05ad00sp");
+		$conexao = new PDO("mysql:host=localhost;dbname=sisbackup","root","ColoqueSuaSenhaAqui");
 	} catch (PDOException $e) {
 		$e->getMessage();
 	}
