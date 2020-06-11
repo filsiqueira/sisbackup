@@ -10,7 +10,7 @@ Você pode realizar a instalação através do script 'instala_sisbackup.sh'. Ba
 
 # Atualizando Servidor e Instalando Dependências
 
-sudo apt update -y && apt upgrade -y && apt dist-upgrade && sudo apt install rsync sshpass unzip wakeonlan wget lamp-server^ phpmyadmin php7.2-cli libssh
+sudo apt update -y && apt upgrade -y && apt dist-upgrade && sudo apt install rsync sshpass unzip wakeonlan wget lamp-server^ phpmyadmin
 
 # Baixando e descompactando arquivos
 
