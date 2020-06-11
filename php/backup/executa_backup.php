@@ -95,7 +95,7 @@ while ($dados = mysqli_fetch_array($consulta)){
 	$assunto = "Backup de arquivos - $comp_nome_usuario";
 	$msg = "<h3>Olá Administrador,</h3><br><h4> Segue informações referentes ao Backup de $comp_nome_usuario, do setor $setor_nome</h4><br><br><table data-mysignature-version='2018-08-25T13:21:30.840Z | 0' cellspacing='0' width='500' cellpadding='0' border='0'><tr>  <td style='font-size:1em;padding:0 0 0 12px;vertical-align: top;border-left: 1px solid #3d85c6;' valign='top'><table cellspacing='0' cellpadding='0' border='0' style='line-height: 1.4;font-family:'Lucida Console', Monaco, monospace;font-size:80%;color: #000001;'><tr><td><span style='font-weight: 600;font-size:1.5em;color:#3d85c6;'>Administração do Sistema</span></td></tr><tr><td style='color:#000001;padding: 8px 0;'> (32)99989 - 5800  |  SISBACKUP   </td></tr></table></td></tr></table>";
 
-  $mount = shell_exec("sudo mount //$ip/HD /mnt/cliente -o username='$comp_usuario_adm',password='$senha'");
+  $mount = shell_exec("sudo mount //$ip/HD /mnt/cliente -o username='$comp_usuario_adm',password='$senha',vers='2.1'");
 // Criando Pasta para guardar os arquivos de log
 	$criaPasta = shell_exec("sudo mkdir -p /var/www/html/sisbackup/log/'$data';sudo chown -R www-data:www-data /var/www/html/sisbackup/log/'$data';sudo chmod 777 -R /var/www/html/sisbackup/log/'$data'");
 	$criaLog = shell_exec("sudo touch /var/www/html/sisbackup/log/$data/'$comp_nome_usuario.txt'");
@@ -149,7 +149,7 @@ while ($dados = mysqli_fetch_array($consulta)){
 
 			if($servidor_plataforma == "Windows"){
 
-				$mountsrv = shell_exec("sudo mount //$servidor_ip/$servidor_nome_compartilhamento /mnt/servidor -o username='$servidor_user_privilegio',password='$servidor_senha_acesso'");
+				$mountsrv = shell_exec("sudo mount //$servidor_ip/$servidor_nome_compartilhamento /mnt/servidor -o username='$servidor_user_privilegio',password='$servidor_senha_acesso',vers='2.1'");
 				$pastaNomeSetor = shell_exec("sudo mkdir -p /mnt/servidor/'$setor_nome'");
 				$rsync = shell_exec("sudo rsync -Crazvpt $exclude /mnt/cliente/'$diretorio_documentos' /mnt/servidor/'$setor_nome'/'$comp_nome_usuario' >>$log");
 
@@ -190,7 +190,7 @@ while ($dados = mysqli_fetch_array($consulta)){
 
 			if($servidor_plataforma == "Windows"){
 
-				$mountsrv = shell_exec("sudo mount //$servidor_ip/$servidor_nome_compartilhamento /mnt/servidor -o username='$servidor_user_privilegio',password='$servidor_senha_acesso'");
+				$mountsrv = shell_exec("sudo mount //$servidor_ip/$servidor_nome_compartilhamento /mnt/servidor -o username='$servidor_user_privilegio',password='$servidor_senha_acesso',vers='2.1'");
 				$criaPasta = shell_exec("sudo mkdir -p /mnt/servidor/'$setor_nome'");
 				$rsync = shell_exec("sudo rsync -Crazvpt $exclude $comp_usuario_adm@$ip:/'$diretorio_documentos' /mnt/servidor/'$setor_nome'/'$comp_nome_usuario' >>$log");
 				$umount = shell_exec("sudo umount /mnt/servidor");
