@@ -48,6 +48,10 @@ http://IPServidor/sisbackup
 login:admin <br>
 senha: sisbackup 
 
+# Alterando senha de usuário root cadastrado no sistema
+Após acessar o sistema, acesse a tela "Servidores de Backup" e edite o servidor "Servidor Aplicação/Backup", alterando a senha de usuário root já pré-cadastrada (coloque a senha de usuário root do seu servidor).
+
+
 # Requisitos Estações Clientes
 Nos computadores clientes é necessário compartilhar o HD com o nome "HD".<br>
 
