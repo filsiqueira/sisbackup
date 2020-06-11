@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 10-Jul-2019 às 00:13
--- Versão do servidor: 5.7.26-0ubuntu0.16.04.1
--- PHP Version: 7.0.33-0ubuntu0.16.04.5
+-- Tempo de geração: 11/06/2020 às 15:38
+-- Versão do servidor: 5.7.30-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.33-0ubuntu0.16.04.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sisbackup`
+-- Banco de dados: `sisbackup`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `associar_doc_computador`
+-- Estrutura para tabela `associar_doc_computador`
 --
 
 CREATE TABLE `associar_doc_computador` (
@@ -35,7 +35,7 @@ CREATE TABLE `associar_doc_computador` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `associar_extensao_arquivo_computador`
+-- Estrutura para tabela `associar_extensao_arquivo_computador`
 --
 
 CREATE TABLE `associar_extensao_arquivo_computador` (
@@ -47,7 +47,7 @@ CREATE TABLE `associar_extensao_arquivo_computador` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `auditoria_acoes`
+-- Estrutura para tabela `auditoria_acoes`
 --
 
 CREATE TABLE `auditoria_acoes` (
@@ -59,10 +59,26 @@ CREATE TABLE `auditoria_acoes` (
   `auditoria_descricao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Fazendo dump de dados para tabela `auditoria_acoes`
+--
+
+INSERT INTO `auditoria_acoes` (`auditoria_id`, `auditoria_usuario`, `auditoria_acao`, `auditoria_tela`, `auditoria_data_hora`, `auditoria_descricao`) VALUES
+(1, 'admin', 'inclusao', 'Cadastro de ServiÃ§o de Envio de Email', '2020-06-11 15:25:15', 'ServiÃ§o de Email Sisbackup Email cadastrado por admin'),
+(2, 'admin', 'inclusao', 'Cadastro de Servidor de Backup', '2020-06-11 15:27:50', 'Servidor de Backup Servidor AplicaÃ§Ã£o/Backup cadastrado por admin'),
+(3, 'admin', 'exclusao', 'Cadastro de ServiÃ§o de Envio de Email', '2020-06-11 15:33:29', 'ServiÃ§o de Email SISBACKUP EMAIL excluÃ­do por admin'),
+(4, 'admin', 'inclusao', 'Cadastro de Sistemas Operacionais', '2020-06-11 15:34:08', 'Sistema Operacional Windows 7 cadastrado por admin'),
+(5, 'admin', 'inclusao', 'Cadastro de Sistemas Operacionais', '2020-06-11 15:34:16', 'Sistema Operacional Windows 8 cadastrado por admin'),
+(6, 'admin', 'inclusao', 'Cadastro de Sistemas Operacionais', '2020-06-11 15:34:22', 'Sistema Operacional Windows 10 cadastrado por admin'),
+(7, 'admin', 'inclusao', 'Cadastro de Documentos', '2020-06-11 15:34:57', 'Documento Ãrea de Trabalho cadastrado por admin'),
+(8, 'admin', 'inclusao', 'Cadastro de Documentos', '2020-06-11 15:35:07', 'Documento Meus Documentos cadastrado por admin'),
+(9, 'admin', 'inclusao', 'Cadastro de Documentos', '2020-06-11 15:35:42', 'Documento Minhas Imagens cadastrado por admin'),
+(10, 'admin', 'inclusao', 'Cadastro de Documentos', '2020-06-11 15:35:53', 'Documento Meus VÃ­deos cadastrado por admin');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `backups_realizados`
+-- Estrutura para tabela `backups_realizados`
 --
 
 CREATE TABLE `backups_realizados` (
@@ -70,13 +86,13 @@ CREATE TABLE `backups_realizados` (
   `backup_id_computador` int(11) NOT NULL,
   `backup_data` datetime NOT NULL,
   `backup_origem` varchar(45) NOT NULL,
-  `backup_status` varchar(45) NOT NULL	
+  `backup_status` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `computadores`
+-- Estrutura para tabela `computadores`
 --
 
 CREATE TABLE `computadores` (
@@ -108,7 +124,7 @@ CREATE TABLE `computadores` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `diretorio_documentos`
+-- Estrutura para tabela `diretorio_documentos`
 --
 
 CREATE TABLE `diretorio_documentos` (
@@ -118,10 +134,28 @@ CREATE TABLE `diretorio_documentos` (
   `diretorio_documentos` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela que armazena informacao do diretorio do documento em cada sistema operacional';
 
+--
+-- Fazendo dump de dados para tabela `diretorio_documentos`
+--
+
+INSERT INTO `diretorio_documentos` (`diretorio_id`, `diretorio_id_documentos`, `diretorio_id_sistema_operacional`, `diretorio_documentos`) VALUES
+(1, 1, 3, 'c:/users/usuario/Desktop'),
+(2, 1, 1, 'c:/users/usuario/Desktop'),
+(3, 1, 2, 'c:/users/usuario/Desktop'),
+(4, 2, 3, 'c:/users/usuario/Documents'),
+(5, 2, 1, 'c:/users/usuario/Documents'),
+(6, 2, 2, 'c:/users/usuario/Documents'),
+(7, 3, 3, 'c:/users/usuario/Pictures'),
+(8, 3, 1, 'c:/users/usuario/Pictures'),
+(9, 3, 2, 'c:/users/usuario/Pictures'),
+(10, 4, 3, 'c:/users/usuario/Videos'),
+(11, 4, 1, 'c:/users/usuario/Videos'),
+(12, 4, 2, 'c:/users/usuario/Videos');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `documentos`
+-- Estrutura para tabela `documentos`
 --
 
 CREATE TABLE `documentos` (
@@ -129,10 +163,20 @@ CREATE TABLE `documentos` (
   `documento_nome` varchar(45) NOT NULL COMMENT 'nome do documento'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela que armazena o cadastro de documentos';
 
+--
+-- Fazendo dump de dados para tabela `documentos`
+--
+
+INSERT INTO `documentos` (`documento_id`, `documento_nome`) VALUES
+(1, 'ÃREA DE TRABALHO'),
+(2, 'MEUS DOCUMENTOS'),
+(3, 'MINHAS IMAGENS'),
+(4, 'MEUS VÃ­DEOS');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `extensao_arquivo`
+-- Estrutura para tabela `extensao_arquivo`
 --
 
 CREATE TABLE `extensao_arquivo` (
@@ -141,7 +185,7 @@ CREATE TABLE `extensao_arquivo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `extensao_arquivo`
+-- Fazendo dump de dados para tabela `extensao_arquivo`
 --
 
 INSERT INTO `extensao_arquivo` (`extensao_arquivo_id`, `extensao_arquivo`) VALUES
@@ -157,7 +201,7 @@ INSERT INTO `extensao_arquivo` (`extensao_arquivo_id`, `extensao_arquivo`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `registro_backup`
+-- Estrutura para tabela `registro_backup`
 --
 
 CREATE TABLE `registro_backup` (
@@ -168,7 +212,7 @@ CREATE TABLE `registro_backup` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `servidores`
+-- Estrutura para tabela `servidores`
 --
 
 CREATE TABLE `servidores` (
@@ -181,10 +225,17 @@ CREATE TABLE `servidores` (
   `servidor_plataforma` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Fazendo dump de dados para tabela `servidores`
+--
+
+INSERT INTO `servidores` (`servidor_id`, `servidor_nome`, `servidor_ip`, `servidor_user_privilegio`, `servidor_senha_acesso`, `servidor_nome_compartilhamento`, `servidor_plataforma`) VALUES
+(1, 'Servidor AplicaÃ§Ã£o/Backup', '127.0.0.1', 'root', 'MDVhZDAwc3A=', 'sisbackup', 'Linux');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `setores`
+-- Estrutura para tabela `setores`
 --
 
 CREATE TABLE `setores` (
@@ -194,7 +245,7 @@ CREATE TABLE `setores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='cadastro de setores';
 
 --
--- Extraindo dados da tabela `setores`
+-- Fazendo dump de dados para tabela `setores`
 --
 
 INSERT INTO `setores` (`setor_id`, `setor_nome`, `setor_descricao`) VALUES
@@ -203,7 +254,7 @@ INSERT INTO `setores` (`setor_id`, `setor_nome`, `setor_descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sistemas_operacionais`
+-- Estrutura para tabela `sistemas_operacionais`
 --
 
 CREATE TABLE `sistemas_operacionais` (
@@ -212,10 +263,19 @@ CREATE TABLE `sistemas_operacionais` (
   `sistema_operacional_plataforma` varchar(45) NOT NULL COMMENT 'plataforma do sistema operacional'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela que armazena o cadastro de sistema operacional';
 
+--
+-- Fazendo dump de dados para tabela `sistemas_operacionais`
+--
+
+INSERT INTO `sistemas_operacionais` (`sistema_operacional_id`, `sistema_operacional_nome`, `sistema_operacional_plataforma`) VALUES
+(1, 'WINDOWS 7', 'WINDOWS'),
+(2, 'WINDOWS 8', 'WINDOWS'),
+(3, 'WINDOWS 10', 'WINDOWS');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `smtp`
+-- Estrutura para tabela `smtp`
 --
 
 CREATE TABLE `smtp` (
@@ -230,7 +290,7 @@ CREATE TABLE `smtp` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -246,18 +306,18 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tabela que armazena o cadastro de usuarios';
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Fazendo dump de dados para tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`usuario_id`, `usuario_nome`, `usuario_login`, `usuario_senha`, `usuario_status`, `usuario_id_setor`, `usuario_email`, `usuario_tentativas_invalidas`, `usuario_data_bloqueio`) VALUES
 (1, 'Administrador', 'admin', 'a2de5d65f926d068f3f6513ec7c9644e', 'ATIVO', 1, 'filipe4009@hotmail.com', 0, NULL);
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `associar_doc_computador`
+-- Índices de tabela `associar_doc_computador`
 --
 ALTER TABLE `associar_doc_computador`
   ADD PRIMARY KEY (`assoc_id`),
@@ -265,31 +325,31 @@ ALTER TABLE `associar_doc_computador`
   ADD KEY `fk_assosiar_doc_cad_doc_idx` (`assoc_id_documentos`);
 
 --
--- Indexes for table `associar_extensao_arquivo_computador`
+-- Índices de tabela `associar_extensao_arquivo_computador`
 --
 ALTER TABLE `associar_extensao_arquivo_computador`
   ADD PRIMARY KEY (`associar_id`);
 
 --
--- Indexes for table `auditoria_acoes`
+-- Índices de tabela `auditoria_acoes`
 --
 ALTER TABLE `auditoria_acoes`
   ADD PRIMARY KEY (`auditoria_id`);
 
 --
--- Indexes for table `backups_realizados`
+-- Índices de tabela `backups_realizados`
 --
 ALTER TABLE `backups_realizados`
   ADD PRIMARY KEY (`backup_id`);
 
 --
--- Indexes for table `computadores`
+-- Índices de tabela `computadores`
 --
 ALTER TABLE `computadores`
   ADD PRIMARY KEY (`comp_id`);
 
 --
--- Indexes for table `diretorio_documentos`
+-- Índices de tabela `diretorio_documentos`
 --
 ALTER TABLE `diretorio_documentos`
   ADD PRIMARY KEY (`diretorio_id`),
@@ -297,125 +357,125 @@ ALTER TABLE `diretorio_documentos`
   ADD KEY `fk_diretorio_doc_cad_so_idx` (`diretorio_id_sistema_operacional`);
 
 --
--- Indexes for table `documentos`
+-- Índices de tabela `documentos`
 --
 ALTER TABLE `documentos`
   ADD PRIMARY KEY (`documento_id`);
 
 --
--- Indexes for table `extensao_arquivo`
+-- Índices de tabela `extensao_arquivo`
 --
 ALTER TABLE `extensao_arquivo`
   ADD PRIMARY KEY (`extensao_arquivo_id`);
 
 --
--- Indexes for table `registro_backup`
+-- Índices de tabela `registro_backup`
 --
 ALTER TABLE `registro_backup`
   ADD PRIMARY KEY (`registro_backup_id`);
 
 --
--- Indexes for table `servidores`
+-- Índices de tabela `servidores`
 --
 ALTER TABLE `servidores`
   ADD PRIMARY KEY (`servidor_id`);
 
 --
--- Indexes for table `setores`
+-- Índices de tabela `setores`
 --
 ALTER TABLE `setores`
   ADD PRIMARY KEY (`setor_id`);
 
 --
--- Indexes for table `sistemas_operacionais`
+-- Índices de tabela `sistemas_operacionais`
 --
 ALTER TABLE `sistemas_operacionais`
   ADD PRIMARY KEY (`sistema_operacional_id`);
 
 --
--- Indexes for table `smtp`
+-- Índices de tabela `smtp`
 --
 ALTER TABLE `smtp`
   ADD PRIMARY KEY (`smtp_id`);
 
 --
--- Indexes for table `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`usuario_id`),
   ADD KEY `fk_usuario_setor_idx` (`usuario_id_setor`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `associar_doc_computador`
+-- AUTO_INCREMENT de tabela `associar_doc_computador`
 --
 ALTER TABLE `associar_doc_computador`
   MODIFY `assoc_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `associar_extensao_arquivo_computador`
+-- AUTO_INCREMENT de tabela `associar_extensao_arquivo_computador`
 --
 ALTER TABLE `associar_extensao_arquivo_computador`
   MODIFY `associar_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `auditoria_acoes`
+-- AUTO_INCREMENT de tabela `auditoria_acoes`
 --
 ALTER TABLE `auditoria_acoes`
-  MODIFY `auditoria_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `auditoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `backups_realizados`
+-- AUTO_INCREMENT de tabela `backups_realizados`
 --
 ALTER TABLE `backups_realizados`
   MODIFY `backup_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `computadores`
+-- AUTO_INCREMENT de tabela `computadores`
 --
 ALTER TABLE `computadores`
   MODIFY `comp_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do computador';
 --
--- AUTO_INCREMENT for table `diretorio_documentos`
+-- AUTO_INCREMENT de tabela `diretorio_documentos`
 --
 ALTER TABLE `diretorio_documentos`
-  MODIFY `diretorio_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `diretorio_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT for table `documentos`
+-- AUTO_INCREMENT de tabela `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `documento_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do documento';
+  MODIFY `documento_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do documento', AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `extensao_arquivo`
+-- AUTO_INCREMENT de tabela `extensao_arquivo`
 --
 ALTER TABLE `extensao_arquivo`
   MODIFY `extensao_arquivo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100001;
 --
--- AUTO_INCREMENT for table `registro_backup`
+-- AUTO_INCREMENT de tabela `registro_backup`
 --
 ALTER TABLE `registro_backup`
   MODIFY `registro_backup_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `servidores`
+-- AUTO_INCREMENT de tabela `servidores`
 --
 ALTER TABLE `servidores`
-  MODIFY `servidor_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `servidor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `setores`
+-- AUTO_INCREMENT de tabela `setores`
 --
 ALTER TABLE `setores`
   MODIFY `setor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `sistemas_operacionais`
+-- AUTO_INCREMENT de tabela `sistemas_operacionais`
 --
 ALTER TABLE `sistemas_operacionais`
-  MODIFY `sistema_operacional_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do sistema operacional';
+  MODIFY `sistema_operacional_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id do sistema operacional', AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `smtp`
+-- AUTO_INCREMENT de tabela `smtp`
 --
 ALTER TABLE `smtp`
-  MODIFY `smtp_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `smtp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
