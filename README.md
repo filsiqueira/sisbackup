@@ -1,3 +1,7 @@
+# Sisbackup - Sistema de backup
+Sistema desenvolvido para backup de arquivos de computadores em rede.
+
+
 # Distribuição homologada
 
 Ubuntu 16.04
